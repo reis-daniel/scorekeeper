@@ -5,45 +5,84 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scorekeeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/stylesheet.css" />
   </head>
   <body>
     <div class="scoreboard">
-      <div class="home-container">
-        <p class="home-score">0</p>
-        <p class="home-team">Home</p>
-        <button class="addBtn homePlusOne">+1</button>
-        <button class="addBtn homePlusTwo">+2</button>
-        <button class="addBtn homePlusThree">+3</button>
+      <!-- Container for Home Score -->
+      <h1 class="headline">Scoreboard</h1>
+      <div class="scoreboard-container">
+        <div class="score-container home-container">
+          <fieldset class="border">
+            <div class="score-headline-container">
+              <h2 class="score-headline home-score">0</h2>
+            </div>
+            <legend class="border-legend home-team">Home</legend>
+          </fieldset>
+          <div class="addBtn-container">
+            <button class="addBtn homePlusOne">+1</button>
+            <button class="addBtn homePlusTwo">+2</button>
+            <button class="addBtn homePlusThree">+3</button>
+          </div>
+        </div>
+
+        <!-- Container for Away Score -->
+        <div class="score-container away-container">
+          <fieldset class="border">
+            <legend class="border-legend away-team">Away</legend>
+            <div class="score-headline-container">
+              <h2 class="score-headline away-score">0</h2>
+            </div>
+          </fieldset>
+          <div class="addBtn-container">
+            <button class="addBtn awayPlusOne">+1</button>
+            <button class="addBtn awayPlusTwo">+2</button>
+            <button class="addBtn awayPlusThree">+3</button>
+          </div>
+        </div>
       </div>
-      <div class="away-container">
-        <p class="away-score">0</p>
-        <p class="away-team">Away</p>
-        <button class="addBtn awayPlusOne">+1</button>
-        <button class="addBtn awayPlusTwo">+2</button>
-        <button class="addBtn awayPlusThree">+3</button>
+      <!-- Container for Config -->
+      <div class="config-container">
+        <div class="btn-container">
+          <button class="resetBtn">Reset</button>
+          <button class="setTeamsBtn">Set Teams</button>
+        </div>
       </div>
-      <div class="btn-container">
-        <button class="resetBtn">Reset</button>
-        <button class="setTeamsBtn">Set Teams</button>
+      <div class="modalSetTeams">
+        <div class="layout-container">
+          <div class="team-container home-team">
+            <label for="setHomeTeam">Home</label>
+            <input
+              type="text"
+              name="home-team"
+              id="setHomeTeam"
+              placeholder="Home team..."
+            />
+          </div>
+          <div class="team-container away-team">
+            <label for="setAwayTeam">Away</label>
+            <input
+              type="text"
+              name="away-team"
+              id="setAwayTeam"
+              placeholder="Away team..."
+            />
+          </div>
+          <div class="modal-btn-container">
+            <button class="saveTeamsBtn">Save</button>
+            <button class="resetTeamsBtn">Reset</button>
+            <button class="closeModal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="setTeams-container">
-      <input
-        type="text"
-        name="home-team"
-        id="setHomeTeam"
-        placeholder="Home team..."
-      />
-      <input
-        type="text"
-        name="away-team"
-        id="setAwayTeam"
-        placeholder="Away team..."
-      />
-      <button class="saveTeamsBtn">Save</button>
-      <button class="resetTeamsBtn">Reset</button>
-    </div>
+
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
