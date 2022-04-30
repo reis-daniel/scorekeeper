@@ -1,3 +1,4 @@
+/* Allgemeines Styling */
 :root {
   --font-fml-main: "Orbitron", sans-serif;
   --font-fml-secondary: "Lato", sans-serif;
@@ -5,7 +6,9 @@
   --clr-score-font: #fdf860;
   --clr-score-bg: #000000;
   --clr-home-primary: #97f5bb;
+  --clr-home-primary-hover: #48d57e;
   --clr-away-primary: #525df4;
+  --clr-away-primary-hover: #3e47c7;
   --clr-font-primary: #ffffff;
   --clr-alert-empty: rgba(255, 128, 128, 0.651);
 }
@@ -17,6 +20,7 @@
   margin: 0;
   line-height: 1;
 }
+
 body {
   background-color: var(--clr-bg);
 }
@@ -25,6 +29,7 @@ body {
   filter: blur(0.15rem);
 }
 
+/* Scoreboard Styling */
 .headline {
   font-size: 3.5rem;
 }
@@ -68,6 +73,7 @@ body {
   border-radius: 1.5rem;
 }
 
+/* Border around Score Styling */
 .border {
   padding: 1.75rem;
   transform: scale(-1);
@@ -81,12 +87,15 @@ body {
   border: 0.25rem solid var(--clr-away-primary);
 }
 
+/* Fieldset Legend Styling */
 .border-legend {
   font-size: 1.5rem;
   text-align: center;
   padding: 0 0.75rem;
   transform: rotate(180deg);
 }
+
+/* Allgemeines Styling der Add-Buttons */
 
 .addBtn {
   font-family: var(--font-fml-secondary);
@@ -99,10 +108,17 @@ body {
 .home-container .addBtn {
   background-color: var(--clr-home-primary);
 }
+.home-container .addBtn:hover {
+  background-color: var(--clr-home-primary-hover);
+}
 .away-container .addBtn {
   background-color: var(--clr-away-primary);
 }
+.away-container .addBtn:hover {
+  background-color: var(--clr-away-primary-hover);
+}
 
+/* Config Styling */
 .btn-container {
   display: flex;
   flex-direction: column;
@@ -120,10 +136,15 @@ body {
   min-width: 4rem;
   font-size: 1rem;
 }
+.config-container button:hover {
+  background-color: var(--clr-score-font);
+}
 
 .setTeams-container input {
   color: var(--clr-score-bg);
 }
+
+/* Modal for Team Settings Styling */
 
 .modalSetTeams {
   position: absolute;
@@ -157,12 +178,21 @@ body {
   width: 100%;
 }
 
+.team-container label {
+  padding-bottom: 0.2rem;
+}
+
 .modal-btn-container button {
-  color: var(--clr-score-bg);
+  color: var(--clr-font-primary);
   padding: 0.5rem 1rem;
-  background-color: var(--clr-score-font);
+  background-color: var(--clr-bg);
   border: 0.05rem solid var(--clr-bg);
   border-radius: 0.75rem;
+}
+
+.modal-btn-container button:hover {
+  background-color: var(--clr-score-font);
+  color: var(--clr-bg);
 }
 
 button {

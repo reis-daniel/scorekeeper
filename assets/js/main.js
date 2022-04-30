@@ -1,6 +1,5 @@
 // Variables constants
 const scoreboardContainer = document.querySelector(".scoreboard");
-
 const homeScoreElem = document.querySelector(".home-score");
 const awayScoreElem = document.querySelector(".away-score");
 const homeAddPoint1 = document.querySelector(".addBtn.homePlusOne");
@@ -9,9 +8,7 @@ const homeAddPoint3 = document.querySelector(".addBtn.homePlusThree");
 const awayAddPoint1 = document.querySelector(".addBtn.awayPlusOne");
 const awayAddPoint2 = document.querySelector(".addBtn.awayPlusTwo");
 const awayAddPoint3 = document.querySelector(".addBtn.awayPlusThree");
-
 const resetScoreBtn = document.querySelector(".resetBtn");
-
 const modalSetTeams = document.querySelector(".modalSetTeams");
 const modalCloseWindow = document.querySelector(".closeModal");
 const setTeamsBtn = document.querySelector(".setTeamsBtn");
@@ -21,7 +18,6 @@ const resetTeamsBtn = document.querySelector(".resetTeamsBtn");
 // Variables lets
 let homeScore = 0;
 let awayScore = 0;
-
 let homeTeamName = document.querySelector(".home-team");
 let awayTeamName = document.querySelector(".away-team");
 let modalHomeName = document.querySelector("#setHomeTeam");
