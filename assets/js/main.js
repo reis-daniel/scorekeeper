@@ -1,7 +1,11 @@
 // Variables constants
 const scoreboardContainer = document.querySelector(".scoreboard");
+
+// Home and Away Score
 const homeScoreElem = document.querySelector(".home-score");
 const awayScoreElem = document.querySelector(".away-score");
+
+// Buttons for adding Points and reset the score
 const homeAddPoint1 = document.querySelector(".addBtn.homePlusOne");
 const homeAddPoint2 = document.querySelector(".addBtn.homePlusTwo");
 const homeAddPoint3 = document.querySelector(".addBtn.homePlusThree");
@@ -9,13 +13,15 @@ const awayAddPoint1 = document.querySelector(".addBtn.awayPlusOne");
 const awayAddPoint2 = document.querySelector(".addBtn.awayPlusTwo");
 const awayAddPoint3 = document.querySelector(".addBtn.awayPlusThree");
 const resetScoreBtn = document.querySelector(".resetBtn");
+
+// Variables for modal window
 const modalSetTeams = document.querySelector(".modalSetTeams");
 const modalCloseWindow = document.querySelector(".closeModal");
 const setTeamsBtn = document.querySelector(".setTeamsBtn");
 const saveTeamsBtn = document.querySelector(".saveTeamsBtn");
 const resetTeamsBtn = document.querySelector(".resetTeamsBtn");
 
-// Variables lets
+// Changable variables
 let homeScore = 0;
 let awayScore = 0;
 let homeTeamName = document.querySelector(".home-team");
@@ -37,8 +43,7 @@ function homeScorePlusThree() {
   homeScore += 3;
   homeScoreElem.innerHTML = homeScore;
 }
-
-// Functions to add 1,2 or 3 points for the Home-Team.
+// Functions to add 1,2 or 3 points for the Away-Team.
 function awayScorePlusOne() {
   awayScore += 1;
   awayScoreElem.innerHTML = awayScore;
@@ -56,19 +61,19 @@ function awayScorePlusThree() {
 // Function to reset score to 0
 function resetScore() {
   homeScore = 0;
-  homeScoreElem.innerHTML = homeScore;
   awayScore = 0;
+  homeScoreElem.innerHTML = homeScore;
   awayScoreElem.innerHTML = awayScore;
 }
 
-// Function to set the teams
+// Open modal window
 function setTeams() {
   modalHomeName.value = "";
   modalAwayName.value = "";
   modalSetTeams.style.display = "flex";
   scoreboardContainer.classList.add("is-blurred");
 }
-
+// Write input values as team names
 function saveTeams() {
   if (modalHomeName.value === "") {
     modalHomeName.style.backgroundColor = "var(--clr-alert-empty)";
@@ -86,6 +91,7 @@ function saveTeams() {
   }
 }
 
+// Reset team names to default
 function resetTeams() {
   homeTeamName.innerHTML = "Home";
   awayTeamName.innerHTML = "Away";
@@ -93,6 +99,7 @@ function resetTeams() {
   scoreboardContainer.classList.remove("is-blurred");
 }
 
+// Function to close modal window without saving or reseting values
 function closeModal() {
   modalSetTeams.style.display = "none";
   scoreboardContainer.classList.remove("is-blurred");
