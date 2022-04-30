@@ -21,6 +21,10 @@ body {
   background-color: var(--clr-bg);
 }
 
+.scoreboard.is-blurred > *:not(#modal-window) {
+  filter: blur(0.15rem);
+}
+
 .headline {
   font-size: 3.5rem;
 }
@@ -123,13 +127,13 @@ body {
 
 .modalSetTeams {
   position: absolute;
-  top: 50%;
+  top: 35%;
   padding: 1.25rem 3rem;
   background-color: var(--clr-font-primary);
   display: grid;
   place-items: center;
   border-radius: 0.75rem;
-  /* display: none; */
+  display: none;
 }
 .layout-container {
   display: flex;

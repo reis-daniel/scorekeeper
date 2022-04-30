@@ -1,4 +1,6 @@
 // Variables constants
+const scoreboardContainer = document.querySelector(".scoreboard");
+
 const homeScoreElem = document.querySelector(".home-score");
 const awayScoreElem = document.querySelector(".away-score");
 const homeAddPoint1 = document.querySelector(".addBtn.homePlusOne");
@@ -68,6 +70,7 @@ function setTeams() {
   modalHomeName.value = "";
   modalAwayName.value = "";
   modalSetTeams.style.display = "flex";
+  scoreboardContainer.classList.add("is-blurred");
 }
 
 function saveTeams() {
@@ -83,6 +86,7 @@ function saveTeams() {
     homeTeamName.innerHTML = modalHomeName.value;
     awayTeamName.innerHTML = modalAwayName.value;
     modalSetTeams.style.display = "none";
+    scoreboardContainer.classList.remove("is-blurred");
   }
 }
 
@@ -90,10 +94,12 @@ function resetTeams() {
   homeTeamName.innerHTML = "Home";
   awayTeamName.innerHTML = "Away";
   modalSetTeams.style.display = "none";
+  scoreboardContainer.classList.remove("is-blurred");
 }
 
 function closeModal() {
   modalSetTeams.style.display = "none";
+  scoreboardContainer.classList.remove("is-blurred");
 }
 
 // Click event for all the Addpoint-Buttons
