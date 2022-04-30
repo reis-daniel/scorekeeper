@@ -1,0 +1,166 @@
+:root {
+  --font-fml-main: "Orbitron", sans-serif;
+  --font-fml-secondary: "Lato", sans-serif;
+  --clr-bg: #2c2c2c;
+  --clr-score-font: #fdf860;
+  --clr-score-bg: #000000;
+  --clr-home-primary: #97f5bb;
+  --clr-away-primary: #525df4;
+  --clr-font-primary: #ffffff;
+  --clr-alert-empty: rgba(255, 128, 128, 0.651);
+}
+
+* {
+  font-family: var(--font-fml-main);
+  color: var(--clr-font-primary);
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+body {
+  background-color: var(--clr-bg);
+}
+
+.headline {
+  font-size: 3.5rem;
+}
+
+.scoreboard {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.scoreboard-container {
+  display: flex;
+  gap: 5rem;
+}
+
+.score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.score-headline {
+  color: var(--clr-score-font);
+  font-size: 7.5rem;
+  border-radius: 0.75rem;
+  transform: scale(-1);
+}
+
+.score-headline-container {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: var(--clr-score-bg);
+  border-radius: 1.5rem;
+}
+
+.border {
+  padding: 1.75rem;
+  transform: scale(-1);
+  border-radius: 1.5rem;
+}
+
+.home-container .border {
+  border: 0.25rem solid var(--clr-home-primary);
+}
+.away-container .border {
+  border: 0.25rem solid var(--clr-away-primary);
+}
+
+.border-legend {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 0 0.75rem;
+  transform: rotate(180deg);
+}
+
+.addBtn {
+  font-family: var(--font-fml-secondary);
+  font-size: 1.75rem;
+  padding: 1rem;
+  border-style: none;
+  border-radius: 0.5rem;
+}
+
+.home-container .addBtn {
+  background-color: var(--clr-home-primary);
+}
+.away-container .addBtn {
+  background-color: var(--clr-away-primary);
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.config-container button {
+  padding: 1rem 3rem;
+  font-family: var(--font-fml-secondary);
+  color: var(--clr-bg);
+  background-color: var(--clr-font-primary);
+  border-style: none;
+  border-radius: 0.5rem;
+  min-width: 4rem;
+  font-size: 1rem;
+}
+
+.setTeams-container input {
+  color: var(--clr-score-bg);
+}
+
+.modalSetTeams {
+  position: absolute;
+  top: 50%;
+  padding: 1.25rem 3rem;
+  background-color: var(--clr-font-primary);
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  /* display: none; */
+}
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.team-container * {
+  color: var(--clr-score-bg);
+}
+
+.team-container input {
+  height: 2rem;
+  width: 100%;
+}
+
+.modal-btn-container button {
+  color: var(--clr-score-bg);
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-score-font);
+  border: 0.05rem solid var(--clr-bg);
+  border-radius: 0.75rem;
+}
+
+button {
+  cursor: pointer;
+}
