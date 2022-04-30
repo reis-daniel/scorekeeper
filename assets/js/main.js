@@ -7,10 +7,22 @@ const homeAddPoint3 = document.querySelector(".addBtn.homePlusThree");
 const awayAddPoint1 = document.querySelector(".addBtn.awayPlusOne");
 const awayAddPoint2 = document.querySelector(".addBtn.awayPlusTwo");
 const awayAddPoint3 = document.querySelector(".addBtn.awayPlusThree");
+
 const resetBtn = document.querySelector(".resetBtn");
+
+const modalSetTeams = document.querySelector(".setTeams-container");
+const setTeamsBtn = document.querySelector(".setTeamsBtn");
+const saveTeamsBtn = document.querySelector(".saveTeamsBtn");
+const resetTeamsBtn = document.querySelector(".resetTeamsBtn");
+
 // Variables lets
 let homeScore = 0;
 let awayScore = 0;
+
+let homeTeamName = document.querySelector(".home-team");
+let awayTeamName = document.querySelector(".away-team");
+let modalHomeName = document.querySelector("#setHomeTeam");
+let modalAwayName = document.querySelector("#setAwayTeam");
 
 // Functions to add 1,2 or 3 points for the Home-Team.
 function homeScorePlusOne() {
@@ -50,6 +62,25 @@ function resetScore() {
   awayScoreElem.innerHTML = awayScore;
 }
 
+// Function to set the teams
+function setTeams() {
+  modalHomeName.value = "";
+  modalAwayName.value = "";
+  modalSetTeams.style.display = "flex";
+}
+
+function saveTeams() {
+  homeTeamName.innerHTML = modalHomeName.value;
+  awayTeamName.innerHTML = modalAwayName.value;
+  modalSetTeams.style.display = "none";
+}
+
+function resetTeams() {
+  homeTeamName.innerHTML = "Home";
+  awayTeamName.innerHTML = "Away";
+  modalSetTeams.style.display = "none";
+}
+
 // Click event for all the Addpoint-Buttons
 homeAddPoint1.addEventListener("click", homeScorePlusOne);
 homeAddPoint2.addEventListener("click", homeScorePlusTwo);
@@ -60,3 +91,8 @@ awayAddPoint3.addEventListener("click", awayScorePlusThree);
 
 // Click event for Reset-Button
 resetBtn.addEventListener("click", resetScore);
+
+// Click event for setting the teams
+setTeamsBtn.addEventListener("click", setTeams);
+saveTeamsBtn.addEventListener("click", saveTeams);
+resetTeamsBtn.addEventListener("click", resetTeams);
