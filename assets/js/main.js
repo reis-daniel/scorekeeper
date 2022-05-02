@@ -29,33 +29,31 @@ let awayTeamName = document.querySelector(".away-team");
 let modalHomeName = document.querySelector("#setHomeTeam");
 let modalAwayName = document.querySelector("#setAwayTeam");
 
-// Functions to add 1,2 or 3 points for the Home-Team.
-function homeScorePlusOne() {
-  homeScore += 1;
-  homeScoreElem.innerText = homeScore;
-}
-
-function homeScorePlusTwo() {
-  homeScore += 2;
-  homeScoreElem.innerHTML = homeScore;
-}
-function homeScorePlusThree() {
-  homeScore += 3;
-  homeScoreElem.innerHTML = homeScore;
-}
-// Functions to add 1,2 or 3 points for the Away-Team.
-function awayScorePlusOne() {
-  awayScore += 1;
-  awayScoreElem.innerHTML = awayScore;
-}
-
-function awayScorePlusTwo() {
-  awayScore += 2;
-  awayScoreElem.innerHTML = awayScore;
-}
-function awayScorePlusThree() {
-  awayScore += 3;
-  awayScoreElem.innerHTML = awayScore;
+// Function to add 1,2 or 3 for home or away Team
+function pointsAdd() {
+  if (this.classList.contains("teamHome")) {
+    if (this.classList.contains("addOne")) {
+      homeScore += 1;
+      homeScoreElem.innerText = homeScore;
+    } else if (this.classList.contains("addTwo")) {
+      homeScore += 2;
+      homeScoreElem.innerText = homeScore;
+    } else if (this.classList.contains("addThree")) {
+      homeScore += 3;
+      homeScoreElem.innerText = homeScore;
+    }
+  } else {
+    if (this.classList.contains("addOne")) {
+      awayScore += 1;
+      awayScoreElem.innerText = awayScore;
+    } else if (this.classList.contains("addTwo")) {
+      awayScore += 2;
+      awayScoreElem.innerText = awayScore;
+    } else if (this.classList.contains("addThree")) {
+      awayScore += 3;
+      awayScoreElem.innerText = awayScore;
+    }
+  }
 }
 
 // Function to reset score to 0
@@ -105,13 +103,16 @@ function closeModal() {
   scoreboardContainer.classList.remove("is-blurred");
 }
 
+// @Franzi, @Freddy:
+// Wenn ich den Buttons ein Eventlistener inkl. Parameter gebe, warum wird das Click-Event beim ersten Laden der Seite direkt ausgeführt und danach nicht mehr?
+
 // Click event for all the Addpoint-Buttons
-homeAddPoint1.addEventListener("click", homeScorePlusOne);
-homeAddPoint2.addEventListener("click", homeScorePlusTwo);
-homeAddPoint3.addEventListener("click", homeScorePlusThree);
-awayAddPoint1.addEventListener("click", awayScorePlusOne);
-awayAddPoint2.addEventListener("click", awayScorePlusTwo);
-awayAddPoint3.addEventListener("click", awayScorePlusThree);
+homeAddPoint1.addEventListener("click", pointsAdd);
+homeAddPoint2.addEventListener("click", pointsAdd);
+homeAddPoint3.addEventListener("click", pointsAdd);
+awayAddPoint1.addEventListener("click", pointsAdd);
+awayAddPoint2.addEventListener("click", pointsAdd);
+awayAddPoint3.addEventListener("click", pointsAdd);
 
 // Click event for Reset-Button
 resetScoreBtn.addEventListener("click", resetScore);
