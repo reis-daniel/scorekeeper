@@ -6,18 +6,18 @@ const homeScoreElem = document.querySelector(".home-score");
 const awayScoreElem = document.querySelector(".away-score");
 
 // Buttons for adding Points and reset the score
-const homeAddPoint1 = document.querySelector(".addBtn.homePlusOne");
-const homeAddPoint2 = document.querySelector(".addBtn.homePlusTwo");
-const homeAddPoint3 = document.querySelector(".addBtn.homePlusThree");
-const awayAddPoint1 = document.querySelector(".addBtn.awayPlusOne");
-const awayAddPoint2 = document.querySelector(".addBtn.awayPlusTwo");
-const awayAddPoint3 = document.querySelector(".addBtn.awayPlusThree");
+const homeAddPoint1 = document.querySelector(".addBtn.teamHome.addOne");
+const homeAddPoint3 = document.querySelector(".addBtn.teamHome.addTwo");
+const homeAddPoint2 = document.querySelector(".addBtn.teamHome.addThree");
+const awayAddPoint1 = document.querySelector(".addBtn.teamAway.addOne");
+const awayAddPoint2 = document.querySelector(".addBtn.teamAway.addTwo");
+const awayAddPoint3 = document.querySelector(".addBtn.teamAway.addThree");
 const resetScoreBtn = document.querySelector(".resetBtn");
+const setTeamsBtn = document.querySelector(".setTeamsBtn");
 
 // Variables for modal window
 const modalSetTeams = document.querySelector(".modalSetTeams");
 const modalCloseWindow = document.querySelector(".closeModal");
-const setTeamsBtn = document.querySelector(".setTeamsBtn");
 const saveTeamsBtn = document.querySelector(".saveTeamsBtn");
 const resetTeamsBtn = document.querySelector(".resetTeamsBtn");
 
@@ -106,7 +106,6 @@ function closeModal() {
 // @Franzi, @Freddy:
 // Wenn ich den Buttons ein Eventlistener inkl. Parameter gebe, warum wird das Click-Event beim ersten Laden der Seite direkt ausgeführt und danach nicht mehr?
 
-// Click event for all the Addpoint-Buttons
 homeAddPoint1.addEventListener("click", pointsAdd);
 homeAddPoint2.addEventListener("click", pointsAdd);
 homeAddPoint3.addEventListener("click", pointsAdd);
